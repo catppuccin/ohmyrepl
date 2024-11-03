@@ -1,0 +1,31 @@
+---
+whiskers:
+  version: 2.5.1
+  filename: "catppuccin.jl"
+---
+using Crayons
+import OhMyREPL: Passes.SyntaxHighlighter
+
+{%- for identifier, flavor in flavors -%}
+{% set palette = flavor.colors %}
+
+function _create_catppuccin_{{ identifier }}_colorscheme()
+    scheme = SyntaxHighlighter.ColorScheme()
+    SyntaxHighlighter.symbol!(scheme, crayon"{{ palette.red.hex }}")
+    SyntaxHighlighter.comment!(scheme, crayon"{{ palette.overlay2.hex }}")
+    SyntaxHighlighter.string!(scheme, crayon"{{ palette.green.hex }}")
+    SyntaxHighlighter.call!(scheme, crayon"{{ palette.blue.hex }}")
+    SyntaxHighlighter.op!(scheme, crayon"{{ palette.sky.hex }}")
+    SyntaxHighlighter.keyword!(scheme, crayon"{{ palette.mauve.hex }}")
+    SyntaxHighlighter.macro!(scheme, crayon"{{ palette.blue.hex }}")
+    SyntaxHighlighter.function_def!(scheme, crayon"{{ palette.blue.hex }}")
+    SyntaxHighlighter.text!(scheme, crayon"{{ palette.text.hex }}")
+    SyntaxHighlighter.error!(scheme, crayon"{{ palette.red.hex }}")
+    SyntaxHighlighter.argdef!(scheme, crayon"{{ palette.yellow.hex }}")
+    SyntaxHighlighter.number!(scheme, crayon"{{ palette.peach.hex }}")
+    scheme
+end
+
+SyntaxHighlighter.add!("Catppuccin{{ identifier | capitalize }}", _create_catppuccin_{{ identifier }}_colorscheme())
+
+{%- endfor -%}
