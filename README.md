@@ -36,13 +36,14 @@
 
 ## Usage
 1. [Install OhMyREPL](https://kristofferc.github.io/OhMyREPL.jl/latest/installation/)
-2. Download `catppuccin.jl` to the ~/.julia/config/`
-3. Add the following to ~/.julia/config/startup.jl:
-```julia
-import OhMyREPL: colorscheme
-include("catppuccin.jl")
-colorscheme!("Catppuccin<Flavor>")
-```
+2. Download [catppuccin.jl](./catppuccin.jl) to the `~/.julia/config/` directory.
+3. Add the following configuration to `~/.julia/config/startup.jl`:
+   
+    ```julia
+    import OhMyREPL: colorscheme
+    include("catppuccin.jl")
+    colorscheme!("CatppuccinLatte") # or 'CatppuccinFrappe', 'CatppuccinMacchiato', 'CatppuccinMocha'
+    ```
 
 ## 💝 Thanks to
 
