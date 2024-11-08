@@ -40,9 +40,9 @@
 3. Add the following configuration to `~/.julia/config/startup.jl`:
    
     ```julia
-    import OhMyREPL: colorscheme
+    import OhMyREPL
     include("catppuccin.jl")
-    colorscheme!("CatppuccinLatte") # or 'CatppuccinFrappe', 'CatppuccinMacchiato', 'CatppuccinMocha'
+    OhMyREPL.colorscheme!("CatppuccinLatte") # or 'CatppuccinFrappe', 'CatppuccinMacchiato', 'CatppuccinMocha'
     ```
 
 ## 💝 Thanks to
